@@ -4,6 +4,15 @@ export default {
   content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
   theme: {
     extend: {
+      centralizarPosition: {
+        'left-50': 'left: 50%;',
+        'transform-translate': 'transform: translate(-50%, 0%);',
+      },
+      backgroundImage: {
+        'topografo': "url('src/assets/topografo.webp')",
+        'logo2': "url('src/assets/altimec3.png')",
+        'logo3': "url('src/assets/topografia4.jpg')",
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
@@ -12,6 +21,8 @@ export default {
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        'esmaecer': 'rgba(255, 255, 255, .3)',
+        'azulaltimec': '#2b6bd2',
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))'
