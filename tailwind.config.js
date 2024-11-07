@@ -6,12 +6,7 @@ export default {
     extend: {
       centralizarPosition: {
         'left-50': 'left: 50%;',
-        'transform-translate': 'transform: translate(-50%, 0%);',
-      },
-      backgroundImage: {
-        'topografo': "url('src/assets/topografo.webp')",
-        'logo2': "url('src/assets/altimec3.png')",
-        'logo3': "url('src/assets/topografia4.jpg')",
+        'transform-translate': 'transform: translate(-50%, 0%);'
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -21,8 +16,8 @@ export default {
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
-        'esmaecer': 'rgba(255, 255, 255, .3)',
-        'azulaltimec': '#2b6bd2',
+        esmaecer: 'rgba(255, 255, 255, .3)',
+        azulaltimec: '#2b6bd2',
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))'
@@ -61,6 +56,28 @@ export default {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))'
         }
+      },
+      keyframes: {
+        'accordion-down': {
+          from: {
+            height: '0'
+          },
+          to: {
+            height: 'var(--radix-accordion-content-height)'
+          }
+        },
+        'accordion-up': {
+          from: {
+            height: 'var(--radix-accordion-content-height)'
+          },
+          to: {
+            height: '0'
+          }
+        }
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out'
       }
     }
   },

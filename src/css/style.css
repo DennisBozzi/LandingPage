@@ -1,3 +1,11 @@
-  .teste {
-    width: 320px;
-  }
+.bg-topografo {
+  background-image: url('/src/assets/topografo.webp');
+}
+
+.bg-logo2 {
+  background-image: url('/src/assets/altimec3.png');
+}
+
+.bg-logo3 {
+  background-image: url('/src/assets/topografia4.jpg');
+}

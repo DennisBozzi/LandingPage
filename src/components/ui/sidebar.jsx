@@ -130,7 +130,7 @@ SidebarProvider.displayName = "SidebarProvider"
 
 const Sidebar = React.forwardRef((
   {
-    side = "left",
+    side = "right",
     variant = "sidebar",
     collapsible = "offcanvas",
     className,
@@ -225,7 +225,7 @@ const SidebarTrigger = React.forwardRef(({ className, onClick, ...props }, ref) 
       data-sidebar="trigger"
       variant="ghost"
       size="icon"
-      className={cn("h-7 w-7", className)}
+      className={cn("h-7 w-7", className, "fixed")}
       onClick={(event) => {
         onClick?.(event)
         toggleSidebar()
