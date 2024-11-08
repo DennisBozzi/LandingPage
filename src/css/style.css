@@ -8,4 +8,7 @@
 
 .bg-logo3 {
   background-image: url('https://i.imgur.com/0yNpyIr.jpg');
+  border: none !important;
+  border-color: none !important;
+  border-radius: none !important;
 }
