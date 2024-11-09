@@ -1,13 +1,7 @@
-.bg-topografo {
-  background-image: url('../topografo.webp');
-}
 
-.bg-logo2 {
-  background-image: url('../altimec3.png');
-}
 
 .bg-logo3 {
-  background-image: url('https://i.imgur.com/0yNpyIr.jpg');
+  background-image: url('/src/assets/topografia4.jpg');
   border: none !important;
   border-color: none !important;
   border-radius: none !important;

@@ -3,12 +3,13 @@ import { Button } from '@/components/ui/button';
 import altimeclogo from "@/assets/altimeclogo.png"
 import { MenuNavigation } from './menu-navigation';
 import { ImWhatsapp } from 'react-icons/im';
-import { Menu, PanelLeft } from 'lucide-react';
+import { PanelLeft } from 'lucide-react';
 import { SheetContent, SheetTrigger, Sheet, SheetTitle, SheetDescription } from './ui/sheet';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { useNavigate } from 'react-router-dom';
 
 function MenuBar() {
-
+  const navigate = useNavigate();
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
@@ -25,6 +26,10 @@ function MenuBar() {
 
   function aparecer() {
     return scrollPosition < 450 ? " hidden" : ""
+  }
+
+  const goTo = (path) => {
+    navigate(path);
   }
 
   return (
@@ -52,13 +57,14 @@ function MenuBar() {
         <MenuNavigation className={"hidden sm:flex"} />
       </div>
 
+      {/* LateralMenu */}
       <Sheet>
         <SheetTrigger className='fixed right-2 top-1 sm:hidden bg-transparent' asChild>
           <Button className='text-white bg-yellow-500' size='icon' variant='ghost'>
             <PanelLeft style={{ width: '28px', height: '28px' }} />
           </Button>
         </SheetTrigger>
-        <SheetContent>
+        <SheetContent open={false}>
           <div className='flex justify-between pr-2'>
             <div>
               <SheetTitle>
@@ -76,24 +82,22 @@ function MenuBar() {
             <AccordionItem value="item-2">
               <AccordionTrigger>Soluções</AccordionTrigger>
               <AccordionContent className='flex flex-col gap-4'>
-                <Button variant='ghost' className='justify-start'>Solução 1</Button>
-                <Button variant='ghost' className='justify-start'>Solução 2</Button>
-                <Button variant='ghost' className='justify-start'>Solução 3</Button>
-                <Button variant='ghost' className='justify-start'>Solução 4</Button>
+                <Button variant='ghost' onClick={() => { goTo('/solucao') }} className='justify-start'>Solução 1</Button>
+                <Button variant='ghost' onClick={() => { goTo('/solucao') }} className='justify-start'>Solução 2</Button>
+                <Button variant='ghost' onClick={() => { goTo('/solucao') }} className='justify-start'>Solução 3</Button>
+                <Button variant='ghost' onClick={() => { goTo('/solucao') }} className='justify-start'>Solução 4</Button>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger>Portfólio</AccordionTrigger>
               <AccordionContent className='flex flex-col gap-4'>
-                <Button variant='ghost' className='justify-start'>Tabalho 1</Button>
-                <Button variant='ghost' className='justify-start'>Tabalho 2</Button>
-                <Button variant='ghost' className='justify-start'>Tabalho 3</Button>
-                <Button variant='ghost' className='justify-start'>Tabalho 4</Button>
+                <Button variant='ghost' onClick={() => { goTo('/portfolio') }} className='justify-start'>Tabalho 1</Button>
+                <Button variant='ghost' onClick={() => { goTo('/portfolio') }} className='justify-start'>Tabalho 2</Button>
+                <Button variant='ghost' onClick={() => { goTo('/portfolio') }} className='justify-start'>Tabalho 3</Button>
+                <Button variant='ghost' onClick={() => { goTo('/portfolio') }} className='justify-start'>Tabalho 4</Button>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-
-
         </SheetContent>
       </Sheet>
 
