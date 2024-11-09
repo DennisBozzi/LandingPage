@@ -18,6 +18,7 @@ export default {
         foreground: 'hsl(var(--foreground))',
         esmaecer: 'rgba(255, 255, 255, .3)',
         azulaltimec: '#2b6bd2',
+        rosaaltimec: 'rgba(240,156,191,255)',
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))'

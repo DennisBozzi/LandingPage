@@ -1,22 +1,29 @@
-import logo from "@/assets/altimec5.png"
-
-
+import logo from "@/assets/altimec3.png"
+import { isIos } from "@/utils/utils"
+import { Button } from "@/components/ui/button"
 
 export default function HomePage() {
 
-  function isIos() {
-    const userAgent = window.navigator.userAgent;
-    const isIOSDevice = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
-    return isIOSDevice ? '' : ' bg-fixed';
-  }
+  var bgFixed = isIos() ? '' : ' bg-fixed'
 
   return (
-    <div className={'bg-logo3 bg-cover bg-esmaecer bg-blend-lighten bg-no-repeat bg-center h-[600px] w-full flex flex-col justify-start items-center gap-20' + isIos()}>
-      <img src={logo} alt="Logo altimec" width="240px" className="mt-24" />
-      <div>
-        <h1 className="text-4xl text-center px-4">"Mapeando o futuro com precisão e confiança."</h1>
-        <h2 className="text-2xl text-center">Seus projetos em boas mãos</h2>
-      </div>
-    </div>
+    <>
+      <section className={'bg-logo3 bg-cover bg-esmaecer bg-blend-lighten bg-no-repeat bg-center h-[800px] w-full flex flex-col justify-startgap-20' + bgFixed}>
+        <div className="my-auto flex flex-col gap-32 items-center ">
+          <img src={logo} alt="Logo altimec" width="240px"/>
+          <div className="flex flex-col items-center gap-4">
+            <h1 className="text-4xl text-center px-4">"Mapeando o futuro com precisão e confiança."</h1>
+            <h2 className="text-2xl text-center">Seus projetos em boas mãos</h2>
+            <Button variant='ghost' className='bg-black text-white mt-8 mb-48 rounded'>SOLICITE UM ORÇAMENTO GRATUITO</Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="text-center h-[800px] py-24">
+        <h1 className="text-4xl">Lorem Ipsum</h1>
+        <h3 className="text-2xl">Lorem ipsum dolor sit amet. Ut unde enim ut quibusdam tempora aut ipsam aperiam sit galisum eaque eum magni quae qui quae rerum.</h3>
+      </section>
+
+    </>
   )
 }

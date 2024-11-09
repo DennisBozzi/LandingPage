@@ -1,8 +1,4 @@
-
-
+/* Background da HomePage */
 .bg-logo3 {
-  background-image: url('/src/assets/topografia4.jpg');
-  border: none !important;
-  border-color: none !important;
-  border-radius: none !important;
+  background-image: url('/src/assets/topografia.jpg');
 }

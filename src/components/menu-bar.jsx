@@ -42,7 +42,7 @@ function MenuBar() {
             <ImWhatsapp />
             <p className='text-white'>+55 (28) 99923-6765</p>
           </div>
-          <Button className='bg-yellow-500 dark rounded-none h-12 text-base' >SOLICITE UM ORÇAMENTO</Button>
+          <Button className='bg-rosaaltimec dark rounded-none h-12 text-base' >SOLICITE UM ORÇAMENTO</Button>
         </div>
       </div>
 
@@ -60,7 +60,7 @@ function MenuBar() {
       {/* LateralMenu */}
       <Sheet>
         <SheetTrigger className='fixed right-2 top-1 sm:hidden bg-transparent' asChild>
-          <Button className='text-white bg-yellow-500' size='icon' variant='ghost'>
+          <Button className='text-white bg-rosaaltimec' size='icon' variant='ghost'>
             <PanelLeft style={{ width: '28px', height: '28px' }} />
           </Button>
         </SheetTrigger>
