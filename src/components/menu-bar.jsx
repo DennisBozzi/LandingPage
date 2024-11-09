@@ -52,7 +52,7 @@ function MenuBar() {
       </div>
 
       {/* AfterScroll */}
-      <div className={"flex justify-center items-center m-auto fixed w-full top-0 sm:h-12 gap-8" + aparecer()} >
+      <div className={"flex justify-center items-center m-auto fixed w-full top-0 sm:h-12 gap-8 bg-white border-b-[1px] border-black" + aparecer()} >
         <img src={altimeclogo} width="24px" className='hidden sm:flex' />
         <MenuNavigation className={"hidden sm:flex"} />
       </div>
