@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 function MenuBar() {
   const navigate = useNavigate();
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [sheetOpen, setSheetOpen] = useState();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,6 +31,7 @@ function MenuBar() {
 
   const goTo = (path) => {
     navigate(path);
+    setSheetOpen(false);
   }
 
   return (
@@ -58,8 +60,8 @@ function MenuBar() {
       </div>
 
       {/* LateralMenu */}
-      <Sheet>
-        <SheetTrigger className='z-50 fixed right-2 top-1 sm:hidden bg-transparent' asChild>
+      <Sheet open={sheetOpen} >
+        <SheetTrigger onClick={() => setSheetOpen(true)} className='z-50 fixed right-2 top-1 sm:hidden bg-transparent' asChild>
           <Button className='text-white bg-slate-900' size='icon' variant='ghost'>
             <PanelLeft style={{ width: '28px', height: '28px' }} />
           </Button>
