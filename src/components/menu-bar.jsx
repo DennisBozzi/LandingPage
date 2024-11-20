@@ -42,7 +42,7 @@ function MenuBar() {
             <ImWhatsapp />
             <p className='text-white'>+55 (28) 99923-6765</p>
           </div>
-          <Button className='bg-rosaaltimec dark rounded-none h-12 text-base' >SOLICITE UM ORÇAMENTO</Button>
+          <Button className='bg-slate-900 dark rounded-none h-12 text-white hover:bg-slate-700' >SOLICITE UM ORÇAMENTO</Button>
         </div>
       </div>
 
@@ -52,15 +52,15 @@ function MenuBar() {
       </div>
 
       {/* AfterScroll */}
-      <div className={"flex justify-center items-center m-auto fixed w-full top-0 sm:h-12 gap-8 bg-white border-b-[1px] border-black" + aparecer()} >
+      <div className={"flex z-50 justify-center items-center m-auto fixed w-full top-0 sm:h-12 gap-8 bg-white border-b-[1px] border-black" + aparecer()} >
         <img src={altimeclogo} width="24px" className='hidden sm:flex' />
         <MenuNavigation className={"hidden sm:flex"} />
       </div>
 
       {/* LateralMenu */}
       <Sheet>
-        <SheetTrigger className='fixed right-2 top-1 sm:hidden bg-transparent' asChild>
-          <Button className='text-white bg-rosaaltimec' size='icon' variant='ghost'>
+        <SheetTrigger className='z-50 fixed right-2 top-1 sm:hidden bg-transparent' asChild>
+          <Button className='text-white bg-slate-900' size='icon' variant='ghost'>
             <PanelLeft style={{ width: '28px', height: '28px' }} />
           </Button>
         </SheetTrigger>
