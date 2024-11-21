@@ -1,110 +1,130 @@
-import React, { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import altimeclogo from "@/assets/altimeclogo.png"
-import { MenuNavigation } from './menu-navigation';
-import { ImWhatsapp } from 'react-icons/im';
-import { PanelLeft } from 'lucide-react';
-import { SheetContent, SheetTrigger, Sheet, SheetTitle, SheetDescription } from './ui/sheet';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { useNavigate } from 'react-router-dom';
+"use client"
 
-function MenuBar() {
+import * as React from "react"
+import { cn } from "@/lib/utils"
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu"
+import { useNavigate } from "react-router-dom"
+
+const components = [
+  {
+    title: "Trabalho 1",
+    href: "/portfolio",
+    description:
+      "A modal dialog that interrupts the user with important content and expects a response.",
+  },
+  {
+    title: "Trabalho 2",
+    href: "/portfolio",
+    description:
+      "For sighted users to preview content available behind a link.",
+  },
+  {
+    title: "Trabalho 3",
+    href: "/portfolio",
+    description:
+      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+  },
+  {
+    title: "Trabalho 4",
+    href: "/portfolio",
+    description: "Visually or semantically separates content.",
+  },
+  {
+    title: "Trabalho 5",
+    href: "/portfolio",
+    description:
+      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+  },
+  {
+    title: "Trabalho 6",
+    href: "/portfolio",
+    description:
+      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+  },
+]
+
+export function MenuBar({ className }) {
+
   const navigate = useNavigate();
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [sheetOpen, setSheetOpen] = useState();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrollPosition]);
-
-  function aparecer() {
-    return scrollPosition < 450 ? " hidden" : ""
-  }
 
   const goTo = (path) => {
     navigate(path);
-    setSheetOpen(false);
   }
 
   return (
-    <>
-
-      {/* BlueBar */}
-      <div className="h-12 bg-azulaltimec flex">
-        <div className='w-[1250px] md:px-20 h-12 m-auto flex md:justify-between justify-center items-center'>
-          <div className='text-white md:flex hidden items-center gap-4 pl-8'>
-            <ImWhatsapp />
-            <p className='text-white'>+55 (28) 99923-6765</p>
-          </div>
-          <Button className='bg-slate-900 dark rounded-none h-12 text-white hover:bg-slate-700' >SOLICITE UM ORÇAMENTO</Button>
-        </div>
-      </div>
-
-      {/* CenteredMenu */}
-      <div className='xl:w-[1250px] absolute sm:flex xl:justify-start justify-center hidden px-24' style={{ left: '50%', transform: 'translate(-50%, 0%)' }}>
-        <MenuNavigation />
-      </div>
-
-      {/* AfterScroll */}
-      <div className={"flex z-50 justify-center items-center m-auto fixed w-full top-0 sm:h-12 gap-8 bg-white border-b-[1px] border-black" + aparecer()} >
-        <img src={altimeclogo} width="24px" className='hidden sm:flex' />
-        <MenuNavigation className={"hidden sm:flex"} />
-      </div>
-
-      {/* LateralMenu */}
-      <Sheet open={sheetOpen} >
-        <SheetTrigger onClick={() => setSheetOpen(true)} className='z-50 fixed right-2 top-1 sm:hidden bg-transparent' asChild>
-          <Button className='text-white bg-slate-900' size='icon' variant='ghost'>
-            <PanelLeft style={{ width: '28px', height: '28px' }} />
-          </Button>
-        </SheetTrigger>
-        <SheetContent open={false}>
-          <div className='flex justify-between pr-2'>
-            <div>
-              <SheetTitle>
-                Altimec - Topografia
-              </SheetTitle>
-              <SheetDescription>Seus projetos em boas mãos!</SheetDescription>
-            </div>
-            <img src={altimeclogo} width={24} alt="" />
-          </div>
-          <hr className='mt-2 mb-8 w-80' />
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <Button variant='link' className='justify-start p-0 w-full text-base'>Home</Button>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>Soluções</AccordionTrigger>
-              <AccordionContent className='flex flex-col gap-4'>
-                <Button variant='ghost' onClick={() => { goTo('/solucao') }} className='justify-start'>Solução 1</Button>
-                <Button variant='ghost' onClick={() => { goTo('/solucao') }} className='justify-start'>Solução 2</Button>
-                <Button variant='ghost' onClick={() => { goTo('/solucao') }} className='justify-start'>Solução 3</Button>
-                <Button variant='ghost' onClick={() => { goTo('/solucao') }} className='justify-start'>Solução 4</Button>
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>Portfólio</AccordionTrigger>
-              <AccordionContent className='flex flex-col gap-4'>
-                <Button variant='ghost' onClick={() => { goTo('/portfolio') }} className='justify-start'>Tabalho 1</Button>
-                <Button variant='ghost' onClick={() => { goTo('/portfolio') }} className='justify-start'>Tabalho 2</Button>
-                <Button variant='ghost' onClick={() => { goTo('/portfolio') }} className='justify-start'>Tabalho 3</Button>
-                <Button variant='ghost' onClick={() => { goTo('/portfolio') }} className='justify-start'>Tabalho 4</Button>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </SheetContent>
-      </Sheet>
-
-    </>
+    <NavigationMenu className={className}>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuLink href="#" onClick={() => goTo('/')} className={navigationMenuTriggerStyle()}>
+            Home
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger className="text-base">Soluções</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <ListItem onClick={() => { goTo('/estacaoTotal') }} title="Estacão Total">
+                Re-usable components built using Radix UI and Tailwind CSS.
+              </ListItem>
+              <ListItem onClick={() => { goTo('/drone') }} title="Drone/Vant">
+                How to install dependencies and structure your app.
+              </ListItem>
+              <ListItem onClick={() => { goTo('/scanner') }} title="Scanner">
+                Styles for headings, paragraphs, lists...etc
+              </ListItem>
+              <ListItem onClick={() => { goTo('/laseTracker') }} title="Laser Tracker">
+                Styles for headings, paragraphs, lists...etc
+              </ListItem>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger className="text-base">Portfólio</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              {components.map((component) => (
+                <ListItem
+                  onClick={() => { goTo(component.href) }}
+                  key={component.title}
+                  title={component.title}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
   )
 }
 
-export { MenuBar }
+const ListItem = React.forwardRef(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <div
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </div>
+      </NavigationMenuLink>
+    </li>
+  )
+})
+ListItem.displayName = "ListItem"

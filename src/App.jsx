@@ -1,18 +1,17 @@
-import { MenuBar } from "./components/menu-bar"
 import HomePage from "./screens/home"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { Layout } from "./components/Layout"
 
 function App() {
-
   const router = createBrowserRouter([
     {
-      path: "/*", element: (<><MenuBar /><HomePage /></>)
+      path: "/*", element: (<Layout><HomePage /></Layout>)
     },
     {
-      path: "/Servicos", element: (<><MenuBar />Servicos</>)
+      path: "/Servicos", element: (<Layout>Servicos</Layout>)
     },
     {
-      path: "/Portfolio", element: (<><MenuBar />Trabalhos</>)
+      path: "/Portfolio", element: (<Layout>Trabalhos</Layout>)
     },
   ]);
 
@@ -22,7 +21,6 @@ function App() {
         router={router}
       />
     </div>
-
   )
 }
 

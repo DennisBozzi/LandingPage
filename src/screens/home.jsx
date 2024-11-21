@@ -58,14 +58,14 @@ export default function HomePage() {
           <img src={img1} className="md:w-2/5 w-full rounded-lg" />
           <div className="flex flex-col gap-4">
             <h3 className="text-2xl font-semibold">Especializada</h3>
-            <h3 className="text-xl text-gray-600">Somos uma empresa especializada em <span className="text-black font-semibold">topografia</span> e dedicada a proporcionar <span className="text-black font-semibold">honestidade</span>, <span className="text-black font-semibold">compromisso</span> e <span className="text-black font-semibold">excelência</span> em cada projeto.</h3>
+            <h3 className="text-xl text-gray-800">Somos uma empresa especializada em <span className="text-black font-semibold">topografia</span> e dedicada a proporcionar <span className="text-black font-semibold">honestidade</span>, <span className="text-black font-semibold">compromisso</span> e <span className="text-black font-semibold">excelência</span> em cada projeto.</h3>
           </div>
         </div>
         <hr />
         <div className="flex items-center sm:gap-8 gap-4 md:flex-row flex-col-reverse sm:p-0 px-4">
           <div className="flex flex-col gap-4">
             <h3 className="text-2xl font-semibold">Profissional</h3>
-            <h3 className="text-xl text-gray-600">Contamos com uma equipe de profissionais <span className="text-black font-semibold">altamente qualificados</span>, estamos comprometidos em atender às <span className="text-black font-semibold">necessidades</span> de nossos <span className="text-black font-semibold">clientes</span> em vários setores.</h3>
+            <h3 className="text-xl text-gray-800">Contamos com uma equipe de profissionais <span className="text-black font-semibold">altamente qualificados</span>, estamos comprometidos em atender às <span className="text-black font-semibold">necessidades</span> de nossos <span className="text-black font-semibold">clientes</span> em vários setores.</h3>
           </div>
           <img src={img2} className="md:w-2/5 w-full rounded-lg" />
         </div>
@@ -156,18 +156,17 @@ export default function HomePage() {
             <div>
               <h2 className="text-xl text-white font-semibold mb-1">Redes Sociais</h2>
               <div className="flex gap-2">
-                <Button  size='icon' className='bg-transparent hover:bg-slate-500 rounded-lg p-1'><img src={instagram} /></Button>
-                <Button  size='icon' className='bg-transparent hover:bg-slate-500 rounded-lg p-1'><img src={facebook} /></Button>
-                <Button  size='icon' className='bg-transparent hover:bg-slate-500 rounded-lg p-1'><img src={whatsapp} /></Button>
-                <Button  size='icon' className='bg-transparent hover:bg-slate-500 rounded-lg p-1'><img src={map} /></Button>
+                <Button size='icon' className='bg-transparent hover:bg-slate-500 rounded-lg p-1'><img src={instagram} /></Button>
+                <Button size='icon' className='bg-transparent hover:bg-slate-500 rounded-lg p-1'><img src={facebook} /></Button>
+                <Button size='icon' className='bg-transparent hover:bg-slate-500 rounded-lg p-1'><img src={whatsapp} /></Button>
+                <Button size='icon' className='bg-transparent hover:bg-slate-500 rounded-lg p-1'><img src={map} /></Button>
               </div>
             </div>
           </div>
           <div className="flex flex-1 md:justify-start justify-center">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10581.653161587303!2d-41.165569390928056!3d-20.33420806431848!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb98fe7eb3b3d73%3A0xd2a930b137ebd39a!2sPlanet%20Burger!5e0!3m2!1spt-BR!2sbr!4v1732125350409!5m2!1spt-BR!2sbr"
-              className="md:max-w-sm w-full h-64 md:h-full rounded-xl"
-              allowFullScreen="false"
+              className="md:max-w-sm w-full h-64 md:h-full rounded-xl" loading="lazy" referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </div>

@@ -1,13 +1,23 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/altimeclogo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Altimec - Topografia</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<html lang="en" class="scroll-smooth 
+max-h-[400px] 
+[&::-webkit-scrollbar]:w-2
+[&::-webkit-scrollbar-track]:rounded-full
+[&::-webkit-scrollbar-track]:bg-transparent
+[&::-webkit-scrollbar-thumb]:bg-slate-900
+dark:[&::-webkit-scrollbar-track]:bg-neutral-700
+dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/altimeclogo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Altimec - Topografia</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>
