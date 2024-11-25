@@ -2,3 +2,7 @@
 .bg-logo3 {
   background-image: url('/src/assets/topografia.jpg');
 }
+
+.bg-solucao {
+  background-image: url('/src/assets/solucoes/estacaoTotal.jpg');
+}

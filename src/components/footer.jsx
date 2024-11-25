@@ -6,7 +6,7 @@ function Footer() {
     <img src={altimeclogo} width={32} />
     <div className="flex flex-col text-center">
       <Button variant='link' className="p-0 text-md">Política de Privacidade e Termos de Uso</Button>
-      <p className="font-semibold text-md">© Altimec Topografia 2022. Todos os direitos Reservados.</p>
+      <p className="font-semibold text-md">© Altimec Topografia 2024. Todos os direitos Reservados.</p>
     </div>
   </section>
   )
